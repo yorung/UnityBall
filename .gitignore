@@ -1,0 +1,8 @@
+Library/
+*.suo
+*.user
+*.sln
+*.exe
+*.apk
+*.bak
+*.csproj
