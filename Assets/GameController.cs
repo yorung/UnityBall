@@ -4,6 +4,10 @@ using System.Collections;
 public class GameController : MonoBehaviour {
     public UnityEngine.UI.Text scoreLabel;
     public GameObject winnerLabelObject;
+    public void Start()
+    {
+        Input.gyro.enabled = true;
+    }
     public void Update()
     {
         int count = GameObject.FindGameObjectsWithTag("Item").Length;
@@ -13,7 +17,8 @@ public class GameController : MonoBehaviour {
             winnerLabelObject.SetActive(true);
         } else
         {
-            scoreLabel.text = count.ToString();
+            scoreLabel.text = Input.gyro.rotationRate.ToString();
+            //            scoreLabel.text = count.ToString();
         }
     }
 }

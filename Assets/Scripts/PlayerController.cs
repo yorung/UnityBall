@@ -18,7 +18,9 @@ public class PlayerController : MonoBehaviour {
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-
+        Vector3 gyro = Input.gyro.rotationRate;
+        x += gyro.y;
+        z -= gyro.x;
         Rigidbody rigidbody = GetComponent<Rigidbody>();
 
         rigidbody.AddForce(x * speed, 0, z * speed);
