@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour {
     }
     public void Update()
     {
+        Vector3 g = Input.gyro.gravity;
+        Physics.gravity = new Vector3(g.x, g.z, g.y) * 9.81f;
         int count = GameObject.FindGameObjectsWithTag("Item").Length;
         if (count == 0)
         {
