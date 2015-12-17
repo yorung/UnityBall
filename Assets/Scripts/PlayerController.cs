@@ -25,5 +25,10 @@ public class PlayerController : MonoBehaviour {
         Rigidbody rigidbody = GetComponent<Rigidbody>();
 
         rigidbody.AddForce(x * speed, 0, z * speed);
+
+        if (rigidbody.position.magnitude > 50)
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
     }
 }
