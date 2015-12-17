@@ -17,7 +17,8 @@ public class GameController : MonoBehaviour {
             winnerLabelObject.SetActive(true);
         } else
         {
-            scoreLabel.text = Input.gyro.rotationRate.ToString();
+            scoreLabel.text = Input.gyro.gravity.ToString();
+            //scoreLabel.text = Input.gyro.rotationRate.ToString();
             //            scoreLabel.text = count.ToString();
         }
     }
